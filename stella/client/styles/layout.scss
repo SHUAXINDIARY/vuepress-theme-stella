@@ -1,0 +1,149 @@
+@import "./color.scss";
+// @import "./constant.scss";
+@import "./theme.scss";
+
+.root {
+    margin: 0;
+    font-family: $font;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+
+    @media (prefers-color-scheme: dark) {
+        ::-webkit-scrollbar {
+            background-color: rgba(142, 142, 147, 0.28);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(87, 87, 90, 0.6);
+            border-radius: 10px;
+        }
+    }
+}
+
+.layout {
+    width: 100vw;
+    @include background;
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .left {
+            height: 100vh;
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .userMsg {
+                text-align: center;
+                position: fixed;
+                align-self: center;
+
+                h1 {
+                    font-size: 75px;
+                    font-weight: 500;
+                    margin: 0;
+
+                    a {
+                        @include label-color;
+                    }
+                }
+
+                ul {
+                    display: flex;
+                    justify-content: space-around;
+                    width: 198px;
+                    margin: 0 auto;
+                }
+
+                .cateList {
+                    font-size: 23px;
+                    font-weight: 700;
+
+                    a {
+                        @include label-link-normal-color;
+                    }
+
+                    .normal,
+                    .focus {
+                        position: relative;
+                        padding-bottom: 3px;
+                        text-align: center;
+                        @include label-color;
+
+                        &:hover {
+                            cursor: pointer;
+                            @include label-color;
+
+                            .linkLine {
+                                height: 50%;
+                                transition: $transition;
+                            }
+
+                            a {
+                                @include label-color;
+                            }
+                        }
+
+                        .linkLine,
+                        .linkFocusLine {
+                            transition: $transition;
+                            display: inline-block;
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            z-index: -1;
+                        }
+
+                        .linkLine {
+                            @include indicator-normal-color;
+                            height: 5px;
+                        }
+                    }
+
+                    .focus {
+                        a {
+                            @include label-color;
+                        }
+
+                        .linkFocusLine {
+                            height: 50%;
+                            @include indicator-high-color;
+                        }
+                    }
+                }
+
+                .iconList {
+                    margin-top: 20px;
+
+                    .iconfont {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+
+        .right {
+            width: 65%;
+            margin-bottom: 100px;
+
+            .content {
+                margin-right: 50px;
+            }
+        }
+    }
+
+    .footer {
+        width: 100%;
+        text-align: center;
+        background-color: #faebd7;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        font-size: 14px;
+    }
+}

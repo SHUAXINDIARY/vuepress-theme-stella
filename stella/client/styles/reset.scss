@@ -1,0 +1,46 @@
+// 返回顶部按钮样式的变量
+:root {
+    // back to top
+    --back-to-top-z-index: 5;
+    --back-to-top-color: #ada0a0;
+    --back-to-top-color-hover: #000;
+    // nprogress
+    --nprogress-color: #ffd54f;
+    --nprogress-z-index: 1031;
+    @media (prefers-color-scheme: dark) {
+        --back-to-top-color: #ada0a0;
+        --back-to-top-color-hover: #fff;
+
+        --nprogress-color: #3f51b5;
+        --nprogress-z-index: 1031;
+    }
+}
+// 返回顶部按钮样式位置
+.back-to-top {
+    bottom: 3rem;
+}
+body {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+        Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+        Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    background-color: #fff;
+    font-feature-settings: "tnum";
+    overflow-x: hidden;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.iconfont::before {
+    padding-right: 10px;
+}
