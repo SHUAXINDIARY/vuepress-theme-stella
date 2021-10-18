@@ -34,10 +34,6 @@
       width: 200px;
       height: 200px;
       overflow-y: scroll;
-      // 隐藏滚动条
-      &::-webkit-scrollbar {
-        display: none;
-      }
       box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%),
         0 9px 28px 8px rgb(0 0 0 / 5%);
       z-index: -1;
@@ -49,16 +45,25 @@
       padding: 10px 0;
       @include background;
       overflow-y: scroll;
+      // 隐藏滚动条
+      &::-webkit-scrollbar {
+        display: none;
+      }
       p {
+        &:hover{
+          @include lighten-high-text-background;
+        }
+      }
+      .hoverItem {
+          @include lighten-high-text-background;
+      }
+      .hoverItem, p {
         text-indent: 2rem;
         font-weight: 100;
         width: 95%;
         border-radius: 3px;
         margin: 0 auto;
         padding: 5px 0;
-        &:hover {
-          @include lighten-high-text-background;
-        }
       }
     }
     &:hover {
@@ -81,6 +86,7 @@
             v-for="(item, i) in allCategory"
             :key="i"
             @click="() => handleSelectCate(item)"
+            :class="route.query.selectedCate === item && 'hoverItem'"
           >
             {{ item }}
           </p>
@@ -105,6 +111,7 @@
             v-for="(item, i) in allTag"
             :key="i"
             @click="() => handleSelectTag(item)"
+            :class="route.query.selectedTag === item && 'hoverItem'"
           >
             {{ item }}
           </p>
