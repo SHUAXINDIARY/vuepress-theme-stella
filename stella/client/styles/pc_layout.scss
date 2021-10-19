@@ -1,0 +1,97 @@
+.left {
+  height: 100vh;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .userMsg {
+    text-align: center;
+    position: fixed;
+    align-self: center;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      width: 198px;
+      margin: 0 auto;
+    }
+
+    .cateList {
+      font-size: 23px;
+      font-weight: 700;
+
+      a {
+        @include label-link-normal-color;
+      }
+
+      .normal,
+      .focus {
+        position: relative;
+        padding-bottom: 3px;
+        text-align: center;
+        @include label-color;
+
+        &:hover {
+          cursor: pointer;
+          @include label-color;
+
+          .linkLine {
+            height: 50%;
+            transition: $transition;
+          }
+
+          a {
+            @include label-color;
+          }
+        }
+
+        .linkLine,
+        .linkFocusLine {
+          transition: $transition;
+          display: inline-block;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+        }
+
+        .linkLine {
+          @include indicator-normal-color;
+          height: 5px;
+        }
+      }
+
+      .focus {
+        a {
+          @include label-color;
+        }
+
+        .linkFocusLine {
+          height: 50%;
+          @include indicator-high-color;
+        }
+      }
+    }
+
+    .iconList {
+      margin-top: 20px;
+      .copyBtn {
+        cursor: pointer;
+      }
+      .iconfont {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+.right {
+  width: 65%;
+  margin-bottom: 100px;
+
+  .content {
+    margin-right: 50px;
+  }
+}
