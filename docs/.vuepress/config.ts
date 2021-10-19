@@ -64,7 +64,7 @@ module.exports = {
             },
             {
                 label: "WEIXIN",
-                link: "",
+                link: "NIXIDESHUAXIN",
             },
             // {
             //   label:'DOUBAN',

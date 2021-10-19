@@ -28,7 +28,20 @@ const uniqueArr = <T>(arr: T[]): T[] => {
     return newRes;
 };
 
+const copyText = (text: string): boolean => {
+    try {
+        const copyPanel = navigator.clipboard;
+        copyPanel.writeText(text);
+    } catch (error) {
+        return false;
+    }
+    return true;
+};
+
+console.log(copyText("asdas"));
+
 export const _ = {
     isEmpty,
     uniqueArr,
+    copyText,
 };
