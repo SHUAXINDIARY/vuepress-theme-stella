@@ -36,7 +36,15 @@
               v-for="(item, index) of themeData.themeConfig.icons"
               :key="index"
             >
-              <a :href="item.link" target="_blank">
+              <a
+                v-if="['EMAIL', 'WEIXIN'].includes(item.label)"
+                target="_blank"
+                @click="() => handleCopyEmail(item.link)"
+                class="copyBtn"
+              >
+                <span :class="`iconfont ${supportIcons[item.label]}`"></span>
+              </a>
+              <a v-else :href="item.link" target="_blank">
                 <span :class="`iconfont ${supportIcons[item.label]}`"></span>
               </a>
             </li>
@@ -69,13 +77,14 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, watchEffect } from "vue";
+import { defineComponent } from "vue";
 import { useRoute } from "vue-router";
 import { usePageData, useSiteData, usePageFrontmatter } from "@vuepress/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import Post from "../components/Post.vue";
 import Title from "../components/Title.vue";
 import PostList from "./PostList.vue";
+import { _ as lodash } from "../../util";
 export default defineComponent({
   components: {
     Post,
@@ -96,6 +105,10 @@ export default defineComponent({
       DOUBAN: "icon-douban",
       GITHUB: "icon-github-outline",
     };
+    const handleCopyEmail = (email: string) => {
+      const result = lodash.copyText(email);
+      result && alert("已复制到粘贴板");
+    };
     return {
       supportIcons,
       foront,
@@ -103,6 +116,7 @@ export default defineComponent({
       siteData,
       themeData,
       route,
+      handleCopyEmail,
     };
   },
 });

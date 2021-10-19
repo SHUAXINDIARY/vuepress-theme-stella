@@ -118,7 +118,9 @@
 
                 .iconList {
                     margin-top: 20px;
-
+                    .copyBtn {
+                        cursor: pointer;
+                    }
                     .iconfont {
                         font-size: 25px;
                     }
