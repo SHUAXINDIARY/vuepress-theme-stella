@@ -8,7 +8,7 @@ const routes = {
     404: path.resolve(__dirname, "../client/layouts/404.vue"),
 };
 
-export default (themeConfig: ThemeConfig = {},ctx) => {
+export default (themeConfig: ThemeConfig = {}, ctx) => {
     return {
         name: "vuepress-theme-stella",
         layouts: routes,
@@ -80,8 +80,8 @@ export default (themeConfig: ThemeConfig = {},ctx) => {
             });
         },
         // 加载markdown-it插件
-        extendsMarkdown(md){
-          md.use(require('markdown-it-task-lists'))
-        }
+        extendsMarkdown(md) {
+            md.use(require("markdown-it-task-lists"));
+        },
     };
 };
