@@ -2,6 +2,10 @@
 @import "./constant";
 
 .passage-container {
+  @media screen and (max-width: $middle) {
+    padding: 0 20px;
+  }
+
   position: relative;
 
   .shiki {

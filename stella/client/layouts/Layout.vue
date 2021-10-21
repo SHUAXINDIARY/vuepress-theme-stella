@@ -22,7 +22,7 @@ import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import Post from "../components/Post.vue";
 import Title from "../components/Title.vue";
 import PostList from "./PostList.vue";
-import Cover from "./Cover.vue";
+import Cover from "../components/Cover.vue";
 export default defineComponent({
   components: {
     Post,

@@ -1,6 +1,13 @@
 <style lang="scss" scoped>
 @import "../styles/theme.scss";
-
+@media screen and (max-width: $middle) {
+  .postTitle{
+    margin-left: 10px;
+  }
+  .postDate {
+    padding-left: 20px;
+  }
+}
 .postTitle {
   display: inline-block;
   position: relative;
@@ -41,7 +48,6 @@
   font-family: PingFangSC-Regular;
   cursor: pointer;
 }
-
 </style>
 <template>
   <h2 class="postTitle">

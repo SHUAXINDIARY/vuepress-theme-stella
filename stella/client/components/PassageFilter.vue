@@ -2,6 +2,14 @@
 @import "../styles/theme.scss";
 .selectArea {
   display: flex;
+  @media screen and (max-width: $middle) {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    & > div {
+      margin-bottom: 20px;
+    }
+  }
   & > div {
     margin-right: 20px;
     position: relative;
@@ -50,14 +58,15 @@
         display: none;
       }
       p {
-        &:hover{
+        &:hover {
           @include lighten-high-text-background;
         }
       }
       .hoverItem {
-          @include lighten-high-text-background;
+        @include lighten-high-text-background;
       }
-      .hoverItem, p {
+      .hoverItem,
+      p {
         text-indent: 2rem;
         font-weight: 100;
         width: 95%;

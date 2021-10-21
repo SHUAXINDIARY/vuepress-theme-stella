@@ -22,11 +22,14 @@
         <Cover />
       </div>
       <div class="right">
-        <div class="header">
-          <MobilelHeader />
-        </div>
         <div class="content">
-          <PostList />
+            <Title
+              :title="foront?.title || pageData.title"
+              :createdTime="foront?.date || pageData.git.createdTime"
+            />
+            <div class="theme-default-content">
+              <Post />
+            </div>
         </div>
       </div>
     </div>
@@ -34,15 +37,14 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
+import { defineComponent, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 import { usePageData, useSiteData, usePageFrontmatter } from "@vuepress/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import Post from "../components/Post.vue";
 import Title from "../components/Title.vue";
-import Cover from "../components/Cover.vue";
-import MobilelHeader from "../components/MobilelHeader.vue";
 import PostList from "./PostList.vue";
+import Cover from "../components/Cover.vue";
 import { _ } from "../../util";
 export default defineComponent({
   components: {
@@ -50,7 +52,6 @@ export default defineComponent({
     Title,
     Cover,
     PostList,
-    MobilelHeader,
   },
   setup(props, ctx) {
     const pageData = usePageData();
@@ -58,7 +59,7 @@ export default defineComponent({
     const foront = usePageFrontmatter();
     const siteData = useSiteData();
     const themeData = useThemeData();
-    onMounted(() => {
+    onUnmounted(() => {
       console.log(route.path);
     });
     const supportIcons = {

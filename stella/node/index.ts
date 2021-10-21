@@ -7,6 +7,7 @@ const routes = {
   Layout: path.resolve(__dirname, "../client/layouts/Layout.vue"),
   404: path.resolve(__dirname, "../client/layouts/404.vue"),
   PostPage: path.resolve(__dirname, "../client/layouts/PostPage.vue"),
+  PostDetail: path.resolve(__dirname, "../client/layouts/PostDetail.vue"),
 };
 
 export default (themeConfig: ThemeConfig = {}, ctx) => {
@@ -64,14 +65,14 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
           allTag,
         },
       });
-      const snippetspage = await createPage(app, {
-        path: "/snippets/",
-        frontmatter: {
-          layout: "Layout",
-          postInfo,
-        },
-      });
-      app.pages.push(...[homepage, snippetspage, postpage]);
+      // const snippetspage = await createPage(app, {
+      //   path: "/snippets/",
+      //   frontmatter: {
+      //     layout: "Layout",
+      //     postInfo,
+      //   },
+      // });
+      app.pages.push(...[homepage, postpage]);
     },
     // 监听文件变动重启 dev ；因为文章数据都是在node层做的
     onWatched(app, watchers, restart) {
@@ -85,5 +86,15 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
     extendsMarkdown(md) {
       md.use(require("markdown-it-task-lists"));
     },
+    extendsPageOptions:({filePath},app) => {
+      console.log(filePath)
+      if(filePath && (filePath.includes('post') || filePath.includes('about'))){
+        return {
+          frontmatter: {
+            layout: 'PostDetail'
+          },
+        }
+      }
+    }
   };
 };

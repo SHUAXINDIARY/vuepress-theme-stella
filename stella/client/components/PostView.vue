@@ -5,7 +5,12 @@
   .postViewTag {
     width: 400px;
     margin: 0 auto;
+    @media screen and (max-width: $middle) {
+      margin-left: 20px;
+      width: 300px;
+    }
     span {
+      display: inline-block;
       margin-right: 10px;
       cursor: pointer;
       font-weight: 700;
