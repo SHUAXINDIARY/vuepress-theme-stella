@@ -100,6 +100,7 @@ h1 {
       max-width: 60px;
       padding-left: 0;
       margin: 0;
+      margin-top: 20px;
       font-weight: 700;
       font-size: 22px;
       a {
@@ -111,7 +112,7 @@ h1 {
         padding-bottom: 3px;
         text-align: center;
         @include label-color;
-        margin-bottom: 5px;
+        margin-bottom: 20px;
         .linkLine,
         .linkFocusLine {
           @include indicator-normal-color;

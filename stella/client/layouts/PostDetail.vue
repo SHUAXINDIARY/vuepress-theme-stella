@@ -20,20 +20,20 @@
     <div class="container">
       <div class="left">
         <Cover />
+        <div class="footer">{{ themeData.themeConfig.footer }}</div>
       </div>
       <div class="right">
         <div class="content">
-            <Title
-              :title="foront?.title || pageData.title"
-              :createdTime="foront?.date || pageData.git.createdTime"
-            />
-            <div class="theme-default-content">
-              <Post />
-            </div>
+          <Title
+            :title="foront?.title || pageData.title"
+            :createdTime="foront?.date || pageData.git.createdTime"
+          />
+          <div class="theme-default-content">
+            <Post />
+          </div>
         </div>
       </div>
     </div>
-    <div class="footer">{{ themeData.themeConfig.footer }}</div>
   </div>
 </template>
 <script lang="ts">

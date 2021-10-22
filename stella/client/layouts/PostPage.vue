@@ -4,6 +4,11 @@
 </style>
 <style lang="scss" scoped>
 @import "../styles/layout.scss";
+@media screen and (min-width: $middle) {
+  .header {
+    display: none;
+  }
+}
 @media screen and (max-width: $middle) {
   .left {
     display: none;
@@ -20,6 +25,7 @@
     <div class="container">
       <div class="left">
         <Cover />
+        <div class="footer">{{ themeData.themeConfig.footer }}</div>
       </div>
       <div class="right">
         <div class="header">
@@ -30,7 +36,6 @@
         </div>
       </div>
     </div>
-    <div class="footer">{{ themeData.themeConfig.footer }}</div>
   </div>
 </template>
 <script lang="ts">

@@ -28,6 +28,9 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    .left {
+      position: relative;
+    }
     // 移动端
     @media screen and (max-width: $middle) {
       .left {
@@ -59,14 +62,14 @@
       }
     }
   }
+}
 
-  .footer {
-    width: 100%;
-    text-align: center;
-    background-color: #faebd7;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    font-size: 14px;
-  }
+.footer {
+  width: inherit;
+  text-align: center;
+  background-color: #faebd7;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  font-size: 14px;
 }

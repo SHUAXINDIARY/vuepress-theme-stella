@@ -10,10 +10,10 @@
     <div class="container">
       <div class="left">
         <Cover />
+        <div class="footer">{{ themeData.themeConfig.footer }}</div>
       </div>
       <div class="right"></div>
     </div>
-    <div class="footer">{{ themeData.themeConfig.footer }}</div>
   </div>
 </template>
 <script lang="ts">

@@ -1,14 +1,21 @@
 <style lang="scss" scoped>
 @import "../styles/theme.scss";
 .postView {
-  padding: 20px 0;
-  .postViewTag {
-    width: 400px;
-    margin: 0 auto;
-    @media screen and (max-width: $middle) {
+  @media screen and (max-width: $middle) {
+    padding: 0 0 20px 0;
+    .postViewTag {
       margin-left: 20px;
       width: 300px;
     }
+  }
+  @media screen and (min-width: $middle) {
+    padding: 20px 0;
+    .postViewTag {
+      width: 400px;
+      margin: 0 auto;
+    }
+  }
+  .postViewTag {
     span {
       display: inline-block;
       margin-right: 10px;

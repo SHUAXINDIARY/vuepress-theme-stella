@@ -1,14 +1,15 @@
 <style lang="scss" scoped>
 @import "../styles/theme.scss";
 @media screen and (max-width: $middle) {
-  .postTitle{
+  .postTitle {
     margin-left: 10px;
   }
   .postDate {
     padding-left: 20px;
   }
 }
-.postTitle {
+.postTitle,
+.hoverpostTitle {
   display: inline-block;
   position: relative;
   font-size: 25px;
@@ -39,6 +40,10 @@
     width: 100%;
     @include indicator-high-color;
   }
+  .titleDesLine {
+    transition: $transition;
+    height: 60%;
+  }
 }
 
 .postDate {
@@ -50,7 +55,7 @@
 }
 </style>
 <template>
-  <h2 class="postTitle">
+  <h2 :class="hover ? 'hoverpostTitle' : 'postTitle'">
     <span>{{ title }}</span>
     <span class="titleDesLine"></span>
   </h2>
@@ -65,6 +70,7 @@ export default defineComponent({
   props: {
     title: String,
     createdTime: Number,
+    hover: Boolean,
   },
   setup(props) {
     return {

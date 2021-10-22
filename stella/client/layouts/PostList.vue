@@ -2,7 +2,9 @@
 @import "../styles/theme.scss";
 .postViewContainer {
   padding-top: 102px;
-
+  @media screen and (max-width: $middle) {
+    padding-top: 20px;
+  }
   .postViewList {
     display: flex;
     flex-wrap: wrap;
