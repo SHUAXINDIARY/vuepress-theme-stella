@@ -4,6 +4,11 @@
 </style>
 <style lang="scss" scoped>
 @import "../styles/layout.scss";
+@media screen and (min-width: $middle) {
+  .header {
+    display: none;
+  }
+}
 @media screen and (max-width: $middle) {
   .left {
     display: none;
@@ -23,6 +28,9 @@
         <div class="footer">{{ themeData.themeConfig.footer }}</div>
       </div>
       <div class="right">
+        <div class="header">
+          <MobilelHeader />
+        </div>
         <div class="content">
           <Title
             :title="foront?.title || pageData.title"
@@ -46,12 +54,15 @@ import Title from "../components/Title.vue";
 import PostList from "./PostList.vue";
 import Cover from "../components/Cover.vue";
 import { _ } from "../../util";
+import MobilelHeader from "../components/MobilelHeader.vue";
+
 export default defineComponent({
   components: {
     Post,
     Title,
     Cover,
     PostList,
+    MobilelHeader,
   },
   setup(props, ctx) {
     const pageData = usePageData();

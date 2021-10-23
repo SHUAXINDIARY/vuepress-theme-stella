@@ -3,12 +3,14 @@
 .headerContainer {
   border-bottom: 1px solid;
   padding: 10px;
+  & > div,
+  a {
+    @include label-color;
+  }
   & > div {
     font-size: 28px;
-    text-indent: 2rem;
     font-weight: 400;
-    padding: 4px 18px;
-    @include background;
+    padding: 0 4px;
     .slash {
       display: inline-block;
       width: 2px;
@@ -17,9 +19,10 @@
       margin-left: 8px;
       margin-right: 12px;
       box-sizing: border-box;
-      background-color: #000;
+      @include label-color-background;
     }
     .highTitle {
+      font-size: 25px;
       @include indicator-high-color;
     }
   }
@@ -42,8 +45,10 @@
   <div class="headerContainer">
     <div>
       <span>
-        <RouterLink to="/">{{ siteData.title }}</RouterLink></span
-      >
+        <RouterLink to="/">
+          {{ siteData.title }}
+        </RouterLink>
+      </span>
       <span class="slash"></span>
       <span class="highTitle">{{ pageName }}</span>
     </div>
@@ -70,6 +75,11 @@ import { usePageData, useSiteData } from "@vuepress/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { useRoute } from "vue-router";
 import Title from "./Title.vue";
+const MMOBILE_TITLE = {
+  post: "文章",
+  about: "关于",
+  snippets: "片段",
+};
 export default defineComponent({
   components: {
     Title,
@@ -81,8 +91,7 @@ export default defineComponent({
     let pageName = ref("");
     const themeData = useThemeData();
     watchEffect(() => {
-      console.log(route.path.split("/")[1]);
-      pageName.value = route.path.split("/")[1];
+      pageName.value = MMOBILE_TITLE[route.path.split("/")[1]];
     });
     const supportIcons = {
       WEIXIN: "icon-weixin",
