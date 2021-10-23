@@ -2,6 +2,7 @@
 - Hi there ! Stella is a Gatsby Theme, design by [jctaoo](https://github.com/jctaoo), But now if you are vuepress2.x users, now you can use **Stella** too!
 - English | [Chinese](./README_CN.md)
 # Overview
+![](./stella_cover.png)
 
 # Usage
  
@@ -71,7 +72,7 @@ module.exports = {
 - [ ] change theme color
 - [ ] pagination
 - [ ] doc、blog mode 
-- [ ] mobile adaptation
+- [x] mobile adaptation
 - [ ] post banner img
 - [ ] site search
 - [ ] friend link
