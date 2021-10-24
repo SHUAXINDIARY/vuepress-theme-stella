@@ -4,7 +4,7 @@ const isProd = process.env.NODE_ENV === "production";
 module.exports = {
   title: "Stella.",
   // theme: path.resolve(__dirname, "./theme/lib/node"),
-  theme: path.resolve(__dirname, "../../stella/node/index.ts"),
+  theme: path.resolve(__dirname, "../../package/stella/node/index.ts"),
   themeConfig: {
     shiki: {
       theme: "material-darker",
