@@ -14,10 +14,6 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
   return {
     name: "vuepress-theme-stella",
     layouts: routes,
-    clientAppEnhanceFiles: path.resolve(
-      __dirname,
-      "../client/clientAppEnhance.ts"
-    ),
     clientAppSetupFiles: path.resolve(
       __dirname,
       "../client/clientAppSetupFiles.ts"

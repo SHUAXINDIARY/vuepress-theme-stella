@@ -3,7 +3,6 @@ import type { Pages, Post, CategoryMap, PostMap, TagMap } from "../../types";
 export const getAllPostMsg = (pages: Pages[]): Post[] => {
   const result: Post[] = [];
   pages.forEach(page => {
-    console.log(page);
     if (page.filePathRelative && page.filePathRelative.includes("post")) {
       result.push({
         // 文章名
