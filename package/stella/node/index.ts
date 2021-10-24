@@ -87,7 +87,6 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
       md.use(require("markdown-it-task-lists"));
     },
     extendsPageOptions:({filePath},app) => {
-      console.log(filePath)
       if(filePath && (filePath.includes('post') || filePath.includes('about'))){
         return {
           frontmatter: {
