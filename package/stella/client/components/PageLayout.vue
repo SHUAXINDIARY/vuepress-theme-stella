@@ -10,6 +10,9 @@
   }
 }
 @media screen and (max-width: $middle) {
+  .header {
+    display: block;
+  }
   .left {
     display: none;
   }
@@ -55,6 +58,7 @@ import Post from "./Post.vue";
 import Title from "./Title.vue";
 import PostList from "../layouts/PostList.vue";
 import Cover from "./Cover.vue";
+import MobilelHeader from "./MobilelHeader.vue";
 export default defineComponent({
   props: {
     isHome: Boolean,
@@ -65,6 +69,7 @@ export default defineComponent({
     Title,
     Cover,
     PostList,
+    MobilelHeader
   },
   setup() {
     const pageData = usePageData();

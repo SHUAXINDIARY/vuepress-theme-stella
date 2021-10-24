@@ -28,9 +28,11 @@ body {
   font-variant: tabular-nums;
   font-feature-settings: "tnum";
   overflow-x: hidden;
-  @include background;
+  background-color: #fff;
+  @media (prefers-color-scheme: dark) {
+    background-color: #1c1c1c;
+  }
 }
-
 ul li {
   list-style: none;
 }
