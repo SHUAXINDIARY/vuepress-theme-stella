@@ -1,5 +1,6 @@
 import { defineClientAppSetup } from "@vuepress/client";
 // 会自动在setup中执行
 export default defineClientAppSetup(() => {
-    // console.log("setup 调用");
+  // 解决ios浏览器hover 属性失效
+    document.body.addEventListener('touchstart',function(){});
 });
