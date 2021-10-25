@@ -82,4 +82,9 @@ module.exports = {
     ],
   },
   dest: path.resolve(__dirname, "../../public"),
+  markdown:{
+    code:{
+      lineNumbers:false
+    }
+  }
 };

@@ -15,14 +15,14 @@
   }
 
   .line-numbers-mode {
-    position: relative;
-
+    display: none;
     .line-numbers {
       position: absolute;
       top: 0;
-      left: 0;
-      color: #fff;
-      padding: 0 10px;
+      left: 20px !important;
+      width: 20px;
+      font-size: 16px;
+      line-height: 20px;
     }
   }
 
@@ -196,7 +196,7 @@
     font-size: $base-text-size;
     font-family: $code-font;
     position: relative;
-    overflow: hidden;
+    overflow: scroll;
 
     .colored-block {
       padding: 18px 0;

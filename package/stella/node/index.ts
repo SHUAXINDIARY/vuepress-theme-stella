@@ -60,13 +60,6 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
           allTag,
         },
       });
-      // const snippetspage = await createPage(app, {
-      //   path: "/snippets/",
-      //   frontmatter: {
-      //     layout: "Layout",
-      //     postInfo,
-      //   },
-      // });
       app.pages.push(...[homepage, postpage]);
     },
     // 监听文md文件变动重启 dev ；因为文章相关数据都是在node层生成并下发的
@@ -89,6 +82,6 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
           },
         }
       }
-    }
+    },
   };
 };
