@@ -1,7 +1,7 @@
 /**
  * @description 判断对象是否为空
  */
-const isEmpty = (obj: object): boolean => {
+const isEmpty = <T>(obj: T): boolean => {
   if (!obj || typeof obj !== "object") {
     throw new Error("obj must be a object");
   }
