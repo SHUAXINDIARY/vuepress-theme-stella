@@ -7,7 +7,6 @@ const routes = {
   Layout: path.resolve(__dirname, "../client/layouts/Layout.vue"),
   404: path.resolve(__dirname, "../client/layouts/404.vue"),
   PostPage: path.resolve(__dirname, "../client/layouts/PostPage.vue"),
-  PostDetail: path.resolve(__dirname, "../client/layouts/PostDetail.vue"),
 };
 
 export default (themeConfig: ThemeConfig = {}, ctx) => {
@@ -70,7 +69,7 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
       // });
       app.pages.push(...[homepage, postpage]);
     },
-    // 监听文件变动重启 dev ；因为文章数据都是在node层做的
+    // 监听文md文件变动重启 dev ；因为文章相关数据都是在node层生成并下发的
     onWatched(app, watchers, restart) {
       watchers.some(item => {
         item.on("change", () => {
@@ -86,7 +85,7 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
       if(filePath && (filePath.includes('post') || filePath.includes('about'))){
         return {
           frontmatter: {
-            layout: 'PostDetail'
+            layout: 'PostPage'
           },
         }
       }
