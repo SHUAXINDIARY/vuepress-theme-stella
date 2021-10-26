@@ -2,12 +2,17 @@ const { path } = require("@vuepress/utils");
 const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
-  head: [["link", { rel: "icon", href: "https://img.shuaxinjs.cn/favicon-16x16-next.png" }]],
+  head: [
+    [
+      "link",
+      { rel: "icon", href: "https://img.shuaxinjs.cn/favicon-16x16-next.png" },
+    ],
+  ],
   title: "Stella.",
   theme: path.resolve(__dirname, "../../package/stella/node/index.ts"),
   themeConfig: {
     shiki: {
-      theme: "material-darker",
+      theme: "nord",
       langs: [
         "c",
         "cpp",
@@ -37,6 +42,8 @@ module.exports = {
         "toml",
         "vue",
         "yml",
+        "javascript",
+        "yaml",
       ],
     },
     footer: "Stella Blog",
