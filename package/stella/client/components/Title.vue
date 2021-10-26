@@ -40,10 +40,6 @@
     width: 100%;
     @include indicator-high-color;
   }
-  .titleDesLine {
-    transition: $transition;
-    height: 60%;
-  }
 }
 
 .postDate {
