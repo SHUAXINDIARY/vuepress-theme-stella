@@ -15,10 +15,9 @@
     <div class="container">
       <div class="left">
         <Cover />
-        <div class="footer">{{ themeData.themeConfig.footer }}</div>
+        <Footer />
       </div>
-      <div class="right">
-      </div>
+      <div class="right"></div>
     </div>
   </div>
 </template>
@@ -28,6 +27,7 @@ import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { usePageData, useSiteData, usePageFrontmatter } from "@vuepress/client";
 import { useRoute } from "vue-router";
 import Cover from "../components/Cover.vue";
+import Footer from "../components/Footer.vue";
 export default defineComponent({
   props: {
     isHome: Boolean,
@@ -35,6 +35,7 @@ export default defineComponent({
   },
   components: {
     Cover,
+    Footer,
   },
   setup() {
     const pageData = usePageData();

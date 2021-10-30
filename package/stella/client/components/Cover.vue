@@ -21,7 +21,7 @@
         :class="route.path.includes(item.link) ? 'focus' : 'normal'"
       >
         <RouterLink :to="item.link">
-          <span>{{ item.text }}</span>
+          <span>{{ item.label }}</span>
           <span
             :class="
               route.path.includes(item.link) ? 'linkFocusLine' : 'linkLine'

@@ -46,18 +46,21 @@ module.exports = {
         "yaml",
       ],
     },
-    footer: "Stella Blog",
+    footer: {
+      label: "Stella Blog",
+      link: "https://github.com/SHUAXINDIARY/vuepress-theme-stella",
+    },
     cates: [
       {
-        text: "文章",
+        label: "文章",
         link: "/post/",
       },
       {
-        text: "片段",
+        label: "片段",
         link: "/snippets/",
       },
       {
-        text: "关于",
+        label: "关于",
         link: "/about/",
       },
     ],

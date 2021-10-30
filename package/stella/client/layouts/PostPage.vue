@@ -27,7 +27,7 @@
     <div class="container">
       <div class="left">
         <Cover />
-        <div class="footer">{{ themeData.themeConfig.footer }}</div>
+        <Footer />
       </div>
       <div class="right">
         <div class="header">
@@ -59,11 +59,13 @@ import Title from "../components/Title.vue";
 import PostList from "../components/PostList.vue";
 import Cover from "../components/Cover.vue";
 import MobilelHeader from "../components/MobilelHeader.vue";
+import Footer from "../components/Footer.vue";
 export default defineComponent({
   components: {
     Post,
     Title,
     Cover,
+    Footer,
     PostList,
     MobilelHeader,
   },

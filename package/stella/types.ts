@@ -2,46 +2,47 @@ import type { HighlighterOptions } from "shiki";
 import type { Page, PageData } from "vuepress";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
 
-interface Cates {
-    text: string;
-    link: string;
+interface ICommon {
+  label: string;
+  link: string;
 }
-interface Icons {
-    label: string;
-    link: string;
-}
+
+type Ifooter = ICommon;
+type Icons = ICommon;
+type Icates = ICommon;
+
 type Data = PageData & GitPluginPageData;
 
 export type Pages = Page<Data>;
 
 export interface ThemeConfig {
-    shiki?: HighlighterOptions;
-    footer?: string;
-    cates?: Cates[];
-    icons?: Icons[];
+  shiki?: HighlighterOptions;
+  footer?: string | Ifooter;
+  cates?: Icates[];
+  icons?: Icons[];
 }
 
 export interface Post {
-    link: string;
-    date: number | string;
-    name: string;
-    categories: string[];
-    tags: string[];
+  link: string;
+  date: number | string;
+  name: string;
+  categories: string[];
+  tags: string[];
 }
 
 export enum stateEmum {
-    selectedCate = "selectedCate",
-    selectedTag = "selectedTag",
+  selectedCate = "selectedCate",
+  selectedTag = "selectedTag",
 }
 
 export interface PostMap {
-    [key: string]: Post[];
+  [key: string]: Post[];
 }
 export interface CategoryMap {
-    allCategory: string[];
-    data: PostMap;
+  allCategory: string[];
+  data: PostMap;
 }
 export interface TagMap {
-    allTag: string[];
-    data: PostMap;
+  allTag: string[];
+  data: PostMap;
 }
