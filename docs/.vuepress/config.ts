@@ -9,7 +9,7 @@ module.exports = {
     ],
   ],
   title: "Stella.",
-  theme: path.resolve(__dirname, "../../package/stella/node/index.ts"),
+  theme: path.resolve(__dirname, "../../packages/stella/node/index.ts"),
   themeConfig: {
     shiki: {
       theme: "nord",

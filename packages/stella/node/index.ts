@@ -13,10 +13,6 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
   return {
     name: "vuepress-theme-stella",
     layouts: routes,
-    clientAppSetupFiles: path.resolve(
-      __dirname,
-      "../client/clientAppSetupFiles.ts"
-    ),
     plugins: [
       ["@vuepress/plugin-nprogress"],
       ["@vuepress/plugin-back-to-top"],
@@ -74,14 +70,25 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
     extendsMarkdown(md) {
       md.use(require("markdown-it-task-lists"));
     },
-    extendsPageOptions:({filePath},app) => {
-      if(filePath && (filePath.includes('post') || filePath.includes('about'))){
+    extendsPageOptions: ({ filePath }, app) => {
+      if (
+        filePath &&
+        (filePath.includes("post") || filePath.includes("about"))
+      ) {
         return {
           frontmatter: {
-            layout: 'PostPage'
+            layout: "PostPage",
           },
-        }
+        };
       }
     },
+    clientAppSetupFiles: path.resolve(
+      __dirname,
+      "../client/clientAppSetupFiles.ts"
+    ),
+    clientAppEnhances: path.resolve(
+      __dirname,
+      "../client/clientAppEnhances.ts"
+    ),
   };
 };
