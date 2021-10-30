@@ -7,56 +7,22 @@
 # Usage
  
 ## themeConfig
-```js
-module.exports = {
-  // vuepress config  
-  title: "SHUAXIN.",
-  theme: 'stella',
-  themeConfig: {
-    // shiki config , same as official website
-    shiki:{
-      // highlight theme 
-      // look here to find more theme https://github.com/shikijs/shiki/blob/main/docs/themes.md
-      theme: "material-darker",
-      // support code https://github.com/shikijs/shiki/blob/main/docs/languages.md
-      lang: [ 'html' ],
-    },
-    // footer content
-    footer: "SHUAXINDIARY Blog",
-    // pageCategory config 
-    cates: [
-      {
-        text: "文章",
-        link: "/post/",
-      },
-      {
-        text: "片段",
-        link: "/snippets/",
-      },
-      {
-        text: "关于",
-        link: "/about/",
-      },
-    ],
-    // media config
-    icons:[
-      {
-        label:'GITHUB',
-        link:'https://github.com/SHUAXINDIARY'
-      },
-      {
-        label:'EMAIL',
-        link:''
-      },
-      {
-        label:'WEIXIN',
-        link:''
-      },
-    ]
-  },
-};
+```ts
+interface ICommon {
+  label: string;
+  link: string;
+}
 
+type Ifooter = ICommon;
+type Icons = ICommon;
+type Icates = ICommon;
 
+interface ThemeConfig extends VupressSiteConfig {
+  shiki?: HighlighterOptions;
+  footer?: string | Ifooter;
+  cates?: Icates[];
+  icons?: Icons[];
+}
 ```
 
 

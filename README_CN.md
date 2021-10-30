@@ -9,56 +9,23 @@
 # 使用
  
 ## 主题配置
-```js
-module.exports = {
-  // vuepress config  
-  title: "SHUAXIN.",
-  theme: 'stella',
-  themeConfig: {
-    // shiki 配置 和官方一直
-    shiki:{
-      // 代码高亮主题配置
-      //更多主题 https://github.com/shikijs/shiki/blob/main/docs/themes.md
-      theme: "material-darker",
-      // 支持语言 https://github.com/shikijs/shiki/blob/main/docs/languages.md
-      lang: [ 'html' ],
-    },
-    // 网站底部内容
-    footer: "SHUAXINDIARY Blog",
-    // 导航页配置 
-    cates: [
-      {
-        text: "文章",
-        link: "/post/",
-      },
-      {
-        text: "片段",
-        link: "/snippets/",
-      },
-      {
-        text: "关于",
-        link: "/about/",
-      },
-    ],
-    // 其他网站链接配置
-    icons:[
-      {
-        label:'GITHUB',
-        link:'https://github.com/SHUAXINDIARY'
-      },
-      {
-        label:'EMAIL',
-        link:''
-      },
-      {
-        label:'WEIXIN',
-        link:''
-      },
-    ]
-  },
-};
 
+```ts
+interface ICommon {
+  label: string;
+  link: string;
+}
 
+type Ifooter = ICommon;
+type Icons = ICommon;
+type Icates = ICommon;
+
+interface ThemeConfig extends VupressSiteConfig {
+  shiki?: HighlighterOptions;
+  footer?: string | Ifooter;
+  cates?: Icates[];
+  icons?: Icons[];
+}
 ```
 
 
