@@ -37,7 +37,7 @@ interface ThemeConfig extends VupressSiteConfig {
 - [x] Stella md 文件样式
 - [x] 支持分类、tag过滤文章 
 - [ ] 默认页支持配置开关 
-- [ ] 支持评论系统 
+- [x] 支持评论系统 
 - [ ] 支持切换主题色 
 - [ ] 支持分页 
 - [ ] 支持文档、博客模式 

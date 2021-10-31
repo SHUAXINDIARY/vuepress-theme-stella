@@ -11,6 +11,11 @@ module.exports = {
   title: "Stella.",
   theme: path.resolve(__dirname, "../../packages/stella/node/index.ts"),
   themeConfig: {
+    comment: {
+      serverURL: "https://stella-comment-uh9g.vercel.app/",
+      dark: "auto",
+      login: "force",
+    },
     shiki: {
       theme: "nord",
       langs: [

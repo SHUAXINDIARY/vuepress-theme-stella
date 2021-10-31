@@ -572,6 +572,11 @@
   dependencies:
     vue-demi "*"
 
+"@waline/client@^1.3.10":
+  version "1.3.10"
+  resolved "https://registry.npmmirror.com/@waline/client/download/@waline/client-1.3.10.tgz#8d9a0b10cd29db2c0c10c41b448dda8506fb900b"
+  integrity sha1-jZoLEM0p2ywMEMQbRI3ahQb7kAs=
+
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
   resolved "https://registry.nlark.com/@webassemblyjs/ast/download/@webassemblyjs/ast-1.11.1.tgz?cache=0&sync_timestamp=1625473368618&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40webassemblyjs%2Fast%2Fdownload%2F%40webassemblyjs%2Fast-1.11.1.tgz#2bfd767eae1a6996f432ff7e8d7fc75679c0b6a7"
@@ -2321,7 +2326,7 @@ markdown-it-emoji@^2.0.0:
   resolved "https://registry.nlark.com/markdown-it-emoji/download/markdown-it-emoji-2.0.0.tgz#3164ad4c009efd946e98274f7562ad611089a231"
   integrity sha1-MWStTACe/ZRumCdPdWKtYRCJojE=
 
-markdown-it-task-lists@2.0.0-beta.26.1.1:
+markdown-it-task-lists@2.1.1:
   version "2.1.1"
   resolved "https://registry.npm.taobao.org/markdown-it-task-lists/download/markdown-it-task-lists-2.1.1.tgz#f68f4d2ac2bad5a2c373ba93081a1a6848417088"
   integrity sha1-9o9NKsK61aLDc7qTCBoaaEhBcIg=

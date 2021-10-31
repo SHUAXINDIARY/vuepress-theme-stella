@@ -34,7 +34,7 @@ interface ThemeConfig extends VupressSiteConfig {
 - [x] markdown style of stella
 - [x] passage filter by category 、tag
 - [ ] config default page ON-OFF
-- [ ] comment system
+- [x] comment system
 - [ ] change theme color
 - [ ] pagination
 - [ ] doc、blog mode 
