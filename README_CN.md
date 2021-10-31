@@ -36,15 +36,17 @@ interface ThemeConfig extends VupressSiteConfig {
 - [x] 支持跟随系统切换模式（深色/浅色） 
 - [x] Stella md 文件样式
 - [x] 支持分类、tag过滤文章 
-- [ ] 默认页支持配置开关 
 - [x] 支持评论系统 
+- [x] 移动端适配 
+- [ ] 默认页支持配置开关 
 - [ ] 支持切换主题色 
 - [ ] 支持分页 
 - [ ] 支持文档、博客模式 
-- [x] 移动端适配 
 - [ ] 文章页配置banner图
 - [ ] 全文搜索
 - [ ] 友链
+- [ ] vue剪切板插件
+- [ ] 评论插件
 
 # License
 [![License: MIT](https://img.shields.io/badge/License-0BSD-yellow.svg)](https://opensource.org/licenses/0BSD)

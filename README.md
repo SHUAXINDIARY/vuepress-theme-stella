@@ -35,13 +35,15 @@ interface ThemeConfig extends VupressSiteConfig {
 - [x] passage filter by category 、tag
 - [ ] config default page ON-OFF
 - [x] comment system
+- [x] mobile adaptation
 - [ ] change theme color
 - [ ] pagination
 - [ ] doc、blog mode 
-- [x] mobile adaptation
 - [ ] post banner img
 - [ ] site search
 - [ ] friend link
+- [ ] clipboard-plugin
+- [ ] comment-plugin
 
 # License
 [![License: MIT](https://img.shields.io/badge/License-0BSD-yellow.svg)](https://opensource.org/licenses/0BSD)
