@@ -1,7 +1,10 @@
 {
   "name": "vuepress-theme-stella",
   "version": "1.0.1",
-  "main": "index.js",
+  "main": "./index.js",
+  "scripts": {
+    "build":"tsc"
+  },
   "devDependencies": {
     "@vuepress/client": "2.0.0-beta.26",
     "@vuepress/core": "2.0.0-beta.26",

@@ -1,5 +1,12 @@
 {
+  "include": [
+    "./client/**/*",
+    "./node/**/*",
+    "./*"
+  ],
+  // "outDir": "../dist",
   "compilerOptions": {
+    "outDir": "../dist",
     "types": [
       "@vuepress/client/types"
     ],
