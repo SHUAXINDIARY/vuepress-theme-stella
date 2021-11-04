@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "main": "./index.js",
   "scripts": {
-    "build":"tsc"
+    "build": "tsc"
   },
   "devDependencies": {
     "@vuepress/client": "2.0.0-beta.26",
