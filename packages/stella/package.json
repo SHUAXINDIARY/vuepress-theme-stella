@@ -1,7 +1,7 @@
 {
   "name": "vuepress-theme-stella",
   "version": "1.0.3",
-  "main": "./index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc"
   },
@@ -30,6 +30,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "dayjs": "^1.10.7",
     "prettier": "^2.4.1"
   }
 }

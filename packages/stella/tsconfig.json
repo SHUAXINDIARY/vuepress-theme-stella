@@ -4,9 +4,8 @@
     "./node/**/*",
     "./*"
   ],
-  // "outDir": "../dist",
   "compilerOptions": {
-    "outDir": "../dist",
+    "outDir": "./dist",
     "types": [
       "@vuepress/client/types"
     ],

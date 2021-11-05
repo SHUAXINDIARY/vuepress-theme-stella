@@ -5,8 +5,9 @@
   "main": "index.js",
   "author": "shuaxin <986384495@qq.com>",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev-doc": "vuepress dev docs",
+    "build-doc": "vuepress build docs",
+    "build-stella": "npm run workspace stella build"
   },
   "license": "MIT",
   "devDependencies": {
@@ -14,7 +15,7 @@
     "vuepress": "^2.0.0-beta.26"
   },
   "workspaces": [
-    "packages/stella"
+    "packages/*"
   ],
   "dependencies": {
     "dayjs": "^1.10.7"
