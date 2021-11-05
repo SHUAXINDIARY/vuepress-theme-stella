@@ -1,11 +1,19 @@
 {
   "name": "vuepress-theme-stella",
   "version": "1.0.3",
-  "main": "./index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc"
   },
   "devDependencies": {
+    "scss": "^0.2.4",
+    "scss-loader": "^0.0.1",
+    "typescript": "^4.4.4",
+    "vue": "^3.2.20",
+    "vue-router": "^4.0.12"
+  },
+  "license": "MIT",
+  "dependencies": {
     "@vuepress/client": "2.0.0-beta.26",
     "@vuepress/core": "2.0.0-beta.26",
     "@vuepress/plugin-back-to-top": "2.0.0-beta.26",
@@ -22,14 +30,7 @@
     "@vueuse/core": "^6.7.3",
     "@waline/client": "^1.3.10",
     "markdown-it-task-lists": "2.1.1",
-    "scss": "^0.2.4",
-    "scss-loader": "^0.0.1",
-    "typescript": "^4.4.4",
-    "vue": "^3.2.20",
-    "vue-router": "^4.0.12"
-  },
-  "license": "MIT",
-  "dependencies": {
+    "dayjs": "^1.10.7",
     "prettier": "^2.4.1"
   }
 }

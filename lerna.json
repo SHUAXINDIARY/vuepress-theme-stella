@@ -1,23 +1,14 @@
 {
-    "packages": [
-        "packages/*"
-    ],
-    "version": "independent",
-    "useWorkspaces": true,
-    "npmClient": "yarn",
-    "command": {
-        "version": {
-            "allowBranch": "main",
-            "exact": true,
-            "ignoreChanges": [
-                "**/*.md"
-            ],
-            "message": "build: publish %s"
-        },
-        "publish": {
-            "ignoreChanges": [
-                "packages/stella"
-            ]
-        }
+  "packages": ["packages/*"],
+  "version": "independent",
+  "useWorkspaces": true,
+  "npmClient": "yarn",
+  "command": {
+    "version": {
+      "allowBranch": "main",
+      "exact": true,
+      "ignoreChanges": ["**/*.md"],
+      "message": "build: publish %s"
     }
+  }
 }
