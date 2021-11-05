@@ -13,6 +13,11 @@
                 "**/*.md"
             ],
             "message": "build: publish %s"
+        },
+        "publish": {
+            "ignoreChanges": [
+                "packages/stella"
+            ]
         }
     }
 }

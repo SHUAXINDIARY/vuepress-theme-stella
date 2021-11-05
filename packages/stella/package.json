@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-stella",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "./index.js",
   "scripts": {
     "build": "tsc"
@@ -24,6 +24,7 @@
     "markdown-it-task-lists": "2.1.1",
     "scss": "^0.2.4",
     "scss-loader": "^0.0.1",
+    "typescript": "^4.4.4",
     "vue": "^3.2.20",
     "vue-router": "^4.0.12"
   },
