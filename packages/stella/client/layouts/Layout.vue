@@ -40,7 +40,6 @@ export default defineComponent({
   setup() {
     const pageData = usePageData();
     const route = useRoute();
-    const foront = usePageFrontmatter();
     const siteData = useSiteData();
     const themeData = useThemeData();
     const supportIcons = {
@@ -53,7 +52,6 @@ export default defineComponent({
     };
     return {
       supportIcons,
-      foront,
       pageData,
       siteData,
       themeData,

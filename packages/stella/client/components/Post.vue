@@ -22,7 +22,6 @@ import Waline from "@waline/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { _ as lodash } from "../../util";
 export default defineComponent({
-  components: { Waline },
   setup() {
     const themeData = useThemeData();
     const initWaline = () => {
