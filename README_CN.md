@@ -7,7 +7,36 @@
 
 
 # 使用
- 
+
+## 安装
+
+```shell
+mkdir stella-demo
+
+yarn init -y # or npm init -y
+
+yarn add vuepress@next2.0.0-beta.26 
+
+yarn add vuepress-theme-stella
+```
+## 写博客
+所有文章文件都应该在**post**目录下
+
+## 创建一个关于页
+新建一个**about**目录，然后新建一个**README.md**
+
+## 分类
+## category
+
+```md
+---
+title: MD样式测试
+category:
+    - 技术
+tag:
+    - MarkDown
+---
+```
 ## 主题配置
 
 ```ts

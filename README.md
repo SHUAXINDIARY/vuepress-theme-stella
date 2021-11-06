@@ -5,7 +5,37 @@
 ![](./stella_cover.png)
 
 # Usage
- 
+
+## install
+
+```shell
+mkdir stella-demo
+
+yarn init -y # or npm init -y
+
+yarn add vuepress@next2.0.0-beta.26 
+
+yarn add vuepress-theme-stella
+```
+
+## write blog
+All blog files should be in the **post** directory
+
+## add About Page
+Create a directory called **about** , Then add a file called README.md
+
+## category
+
+```md
+---
+title: MD样式测试
+category:
+    - 技术
+tag:
+    - MarkDown
+---
+```
+
 ## themeConfig
 ```ts
 interface ICommon {
