@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-stella",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc"
@@ -29,8 +29,8 @@
     "@vuepress/utils": "2.0.0-beta.25",
     "@vueuse/core": "^6.7.3",
     "@waline/client": "^1.3.10",
-    "markdown-it-task-lists": "2.1.1",
     "dayjs": "^1.10.7",
+    "markdown-it-task-lists": "2.1.1",
     "prettier": "^2.4.1"
   }
 }
