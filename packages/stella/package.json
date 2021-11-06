@@ -1,7 +1,14 @@
 {
   "name": "vuepress-theme-stella",
   "version": "1.0.4",
-  "main": "./dist/index.js",
+  "main": "./node/index.ts",
+  "homepage": "https://stella.shuaxinjs.cn/",
+  "author": {
+    "name": "shuaxin",
+    "email": "shuaxinjs@qq.com",
+    "url": "https://blog.shuaxindiary.cn/"
+  },
+  "repository": "https://github.com/SHUAXINDIARY/vuepress-theme-stella",
   "scripts": {
     "build": "tsc"
   },

@@ -3,7 +3,6 @@
   "name": "blog-shuaxindiary",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "shuaxin <986384495@qq.com>",
   "scripts": {
     "dev-doc": "vuepress dev docs",
     "build-doc": "vuepress build docs"
