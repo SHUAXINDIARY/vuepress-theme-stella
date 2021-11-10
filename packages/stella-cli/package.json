@@ -1,0 +1,19 @@
+{
+  "name": "stella-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "stella-cli": "./bin/stella-cli.js"
+  },
+  "keywords": [],
+  "author": "SHUAXINDIARY",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.3.0"
+  }
+}

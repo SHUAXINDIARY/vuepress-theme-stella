@@ -8,8 +8,12 @@ interface ICommon {
 }
 
 type Ifooter = ICommon;
-type Icons = ICommon;
 type Icates = ICommon;
+export type linkLabel = "WEIXIN" | "TWITTER" | "WEIBO" | "EMAIL" | "DOUBAN" | "GITHUB";
+
+interface Icons extends ICommon {
+  label: linkLabel;
+}
 
 type Data = PageData & GitPluginPageData;
 
