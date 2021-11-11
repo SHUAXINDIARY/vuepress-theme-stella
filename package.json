@@ -4,9 +4,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev-doc": "vuepress dev docs",
-    "build-doc": "vuepress build docs",
-    "build-stella": "npm run workspace stella build"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
   },
   "license": "MIT",
   "devDependencies": {

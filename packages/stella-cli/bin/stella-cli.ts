@@ -9,12 +9,15 @@ const { createCommand } = require("commander");
 const program = createCommand();
 const package = require("../package.json");
 const chalk = require("chalk");
+const mkdirp = require("mkdirp");
 
+// 命令映射
 const command = {
   i: "initTemplate",
   git: "git",
 };
 
+// 命令函数映射
 const commandMap = {
   // 生成模板
   [command.i]: initTemplate,
@@ -24,6 +27,7 @@ const commandMap = {
 const _exit = process.exit;
 const _argv = process.argv;
 
+// 命令行交互
 program
   .name(chalk.bgBlue(chalk.white("stella")))
   .description(chalk.bgBlue(chalk.white("vuepress2.x theme cli")))
@@ -44,6 +48,7 @@ if (!_exit.exited) {
   main();
 }
 
+// 执行入口
 function main() {
   const opts = program.opts();
   const shellOpts = Object.keys(opts);
@@ -54,6 +59,7 @@ function main() {
   }
 }
 
+// 根据命令执行对应函数
 function start(opts) {
   opts.forEach(opt => {
     commandMap[opt]();
@@ -83,6 +89,7 @@ function addGitignore() {
   console.log("添加gitignore");
 }
 
+// 格式化目录名
 function createAppName(pathName) {
   return path
     .basename(pathName)
@@ -91,12 +98,24 @@ function createAppName(pathName) {
     .toLowerCase();
 }
 
+// 创建模板
 function createApplication(appName, dir) {
   console.log("初始化模板");
   console.log(appName);
   console.log(dir);
+  const pkg = {
+    name: appName,
+    version: "0.0.0",
+    private: true,
+    dependencies: {
+      vuepress: "2.0.0-beta.26",
+      "vuepress-theme-stella": "^1.0.5",
+    },
+  };
+  mkdirp.sync(appName, parseInt("0755", 8));
 }
 
+// 判断是否为空目录
 function emptyDirectory(dir, fn) {
   fs.readdir(dir, function (err, files) {
     if (err && err.code !== "ENOENT") throw err;
