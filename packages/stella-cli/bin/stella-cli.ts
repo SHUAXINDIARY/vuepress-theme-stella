@@ -63,7 +63,6 @@ function start(opts) {
 function initTemplate() {
   const destinationPath = program.args.shift() || ".";
   const docName = createAppName(destinationPath) || "hello-stella";
-  console.log("初始化模板", docName);
   emptyDirectory(destinationPath, function (empty) {
     if (empty || program.force) {
       createApplication(docName, destinationPath);
@@ -92,7 +91,11 @@ function createAppName(pathName) {
     .toLowerCase();
 }
 
-function createApplication(appName, dir) {}
+function createApplication(appName, dir) {
+  console.log("初始化模板");
+  console.log(appName);
+  console.log(dir);
+}
 
 function emptyDirectory(dir, fn) {
   fs.readdir(dir, function (err, files) {
