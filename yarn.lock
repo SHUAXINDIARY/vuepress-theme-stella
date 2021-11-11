@@ -1108,6 +1108,11 @@ commander@^8.1.0:
   resolved "https://registry.nlark.com/commander/download/commander-8.2.0.tgz#37fe2bde301d87d47a53adeff8b5915db1381ca8"
   integrity sha1-N/4r3jAdh9R6U63v+LWRXbE4HKg=
 
+commander@^8.3.0:
+  version "8.3.0"
+  resolved "https://registry.npmmirror.com/commander/download/commander-8.3.0.tgz?cache=0&sync_timestamp=1634886396986&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fcommander%2Fdownload%2Fcommander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
+  integrity sha1-SDfqGy2me5xhamevuw+v7lZ7ymY=
+
 compressible@~2.0.16:
   version "2.0.18"
   resolved "https://registry.nlark.com/compressible/download/compressible-2.0.18.tgz#af53cca6b070d4c3c0750fbd77286a6d7cc46fba"
