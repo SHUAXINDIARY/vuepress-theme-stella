@@ -8,7 +8,7 @@ export const getAllPostMsg = (pages: Pages[]): Post[] => {
         // 文章名
         name: page.frontmatter.title || page.title,
         // 创建日期 以推到git仓库为准
-        date: page.data.git.createdTime || page.date,
+        date: page.data?.git?.createdTime || page.date,
         // 文章分类
         categories: (page.frontmatter.category as string[]) || [],
         // 文章标签
@@ -31,7 +31,7 @@ export const getAllCategory = (pages: Pages[]): CategoryMap => {
             // 文章名
             name: page.frontmatter.title || page.title,
             // 创建日期 以推到git仓库为准
-            date: page.data.git.createdTime || page.date,
+            date: page.data?.git?.createdTime || page.date,
             // 文章分类
             categories: (page.frontmatter.category as string[]) || [],
             // 文章标签
@@ -66,7 +66,7 @@ export const getAllTag = (pages: Pages[]): TagMap => {
             // 文章名
             name: page.frontmatter.title || page.title,
             // 创建日期 以推到git仓库为准
-            date: page.data.git.createdTime || page.date,
+            date: page.data?.git?.createdTime || page.date,
             // 文章分类
             categories: (page.frontmatter.category as string[]) || [],
             // 文章标签

@@ -13,7 +13,7 @@ mkdir stella-demo
 
 yarn init -y # or npm init -y
 
-yarn add vuepress@next2.0.0-beta.26 
+yarn add vuepress
 
 yarn add vuepress-theme-stella
 ```
