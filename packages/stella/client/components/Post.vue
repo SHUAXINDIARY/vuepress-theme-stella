@@ -25,7 +25,6 @@ export default defineComponent({
   setup() {
     const themeData = useThemeData();
     const initWaline = () => {
-      console.log();
       Waline({
         el: "#Waline",
         ...themeData.value.themeConfig?.comment,
@@ -36,7 +35,6 @@ export default defineComponent({
         initWaline();
       }
     });
-
     return { themeData, lodash };
   },
 });

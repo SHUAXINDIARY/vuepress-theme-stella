@@ -41,10 +41,19 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
       const allTag = getAllTag(app.pages);
 
       // default pages
+      // const homepage = await createPage(app, {
+      //   path: "/",
+      //   frontmatter: {
+      //     layout: "Layout",
+      //   },
+      // });
       const homepage = await createPage(app, {
         path: "/",
         frontmatter: {
-          layout: "Layout",
+          layout: "PostPage",
+          postInfo,
+          allCategory,
+          allTag,
         },
       });
       const postpage = await createPage(app, {

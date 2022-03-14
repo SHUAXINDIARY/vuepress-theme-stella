@@ -35,10 +35,10 @@
         </div>
         <div class="content">
           <PostList v-if="route.path === '/post/'" />
-          <div v-else>
+          <div v-else-if="!['/post/', '/'].includes(route.path)">
             <Title
               :title="foront?.title || pageData.title"
-              :createdTime="foront?.date || pageData.git.createdTime"
+              :createdTime="Number(foront?.date)"
             />
             <div class="theme-default-content">
               <Post />

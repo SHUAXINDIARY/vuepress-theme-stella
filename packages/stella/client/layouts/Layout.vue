@@ -17,7 +17,15 @@
         <Cover />
         <Footer />
       </div>
-      <div class="right"></div>
+      <div class="right">
+        <Title
+          :title="foront?.title || pageData.title"
+          :createdTime="Number(foront?.date)"
+        />
+        <div class="theme-default-content">
+          <Post />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -28,6 +36,8 @@ import { usePageData, useSiteData, usePageFrontmatter } from "@vuepress/client";
 import { useRoute } from "vue-router";
 import Cover from "../components/Cover.vue";
 import Footer from "../components/Footer.vue";
+import Title from "../components/Title.vue";
+import Post from "../components/Post.vue";
 export default defineComponent({
   props: {
     isHome: Boolean,
@@ -36,12 +46,15 @@ export default defineComponent({
   components: {
     Cover,
     Footer,
+    Title,
+    Post
   },
   setup() {
     const pageData = usePageData();
     const route = useRoute();
     const siteData = useSiteData();
     const themeData = useThemeData();
+    const foront = usePageFrontmatter();
     const supportIcons = {
       WEIXIN: "icon-weixin",
       TWITTER: "icon-HTSCIT-Twitter",
@@ -56,6 +69,7 @@ export default defineComponent({
       siteData,
       themeData,
       route,
+      foront,
     };
   },
 });

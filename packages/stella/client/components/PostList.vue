@@ -39,7 +39,7 @@ export default defineComponent({
     PassageFilter,
   },
   setup(props) {
-    const foront = usePageFrontmatter();
+    const foront = usePageFrontmatter<any>();
     const route = useRoute();
     const router = useRouter();
     const state = reactive({
