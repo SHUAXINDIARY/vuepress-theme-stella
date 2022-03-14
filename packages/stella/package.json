@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-stella",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "./index.ts",
   "homepage": "https://stella.shuaxinjs.cn/",
   "author": {
