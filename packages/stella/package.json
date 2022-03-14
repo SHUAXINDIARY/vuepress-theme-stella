@@ -1,7 +1,7 @@
 {
   "name": "vuepress-theme-stella",
   "version": "1.0.5",
-  "main": "./node/index.ts",
+  "main": "./index.ts",
   "homepage": "https://stella.shuaxinjs.cn/",
   "author": {
     "name": "SHUAXINDIARY",
@@ -13,6 +13,7 @@
     "build": "tsc"
   },
   "devDependencies": {
+    "@vuepress/bundler-webpack": "^2.0.0-beta.36",
     "scss": "^0.2.4",
     "scss-loader": "^0.0.1",
     "typescript": "^4.4.4",

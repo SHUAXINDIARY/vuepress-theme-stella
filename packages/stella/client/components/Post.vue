@@ -7,13 +7,13 @@
 <template>
   <div class="passage-container">
     <Content />
-    <div
+    <!-- <div
       v-if="
         themeData?.themeConfig.comment &&
         !lodash.isEmpty(themeData.themeConfig.comment)
       "
       id="Waline"
-    />
+    /> -->
   </div>
 </template>
 <script lang="ts">
@@ -24,17 +24,14 @@ import { _ as lodash } from "../../util";
 export default defineComponent({
   setup() {
     const themeData = useThemeData();
-    const initWaline = () => {
-      Waline({
-        el: "#Waline",
-        ...themeData.value.themeConfig?.comment,
-      });
-    };
-    onMounted(() => {
-      if (!lodash.isEmpty(themeData.value.themeConfig?.comment)) {
-        initWaline();
-      }
-    });
+    // onMounted(() => {
+    //   if (!lodash.isEmpty(themeData.value.themeConfig?.comment)) {
+    //       Waline({
+    //         el: "#Waline",
+    //         ...themeData.value.themeConfig?.comment,
+    //       });
+    //   }
+    // });
     return { themeData, lodash };
   },
 });

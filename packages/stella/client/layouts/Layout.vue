@@ -9,6 +9,18 @@
     display: none;
   }
 }
+@media screen and (max-width: $middle) {
+  .header {
+    display: block;
+  }
+  .left {
+    display: none;
+  }
+  .right {
+    display: block !important;
+    width: 100vw;
+  }
+}
 </style>
 <template>
   <div class="layout">
@@ -18,58 +30,58 @@
         <Footer />
       </div>
       <div class="right">
-        <Title
-          :title="foront?.title || pageData.title"
-          :createdTime="Number(foront?.date)"
-        />
-        <div class="theme-default-content">
-          <Post />
+        <div class="header">
+          <MobilelHeader />
+        </div>
+        <div class="content">
+          <PostList v-if="route.path === '/post/'" />
+          <div v-else-if="!['/post/', '/'].includes(route.path)">
+            <Title
+              :title="foront?.title || pageData.title"
+              :createdTime="Number(foront?.date)"
+            />
+            <div class="theme-default-content">
+              <Post />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, watchEffect } from "vue";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
-import { usePageData, useSiteData, usePageFrontmatter } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { useRoute } from "vue-router";
-import Cover from "../components/Cover.vue";
-import Footer from "../components/Footer.vue";
-import Title from "../components/Title.vue";
 import Post from "../components/Post.vue";
+import Title from "../components/Title.vue";
+import PostList from "../components/PostList.vue";
+import Cover from "../components/Cover.vue";
+import MobilelHeader from "../components/MobilelHeader.vue";
+import Footer from "../components/Footer.vue";
 export default defineComponent({
-  props: {
-    isHome: Boolean,
-    isShowPostList: Boolean,
-  },
   components: {
+    Post,
+    Title,
     Cover,
     Footer,
-    Title,
-    Post
+    PostList,
+    MobilelHeader,
   },
   setup() {
-    const pageData = usePageData();
     const route = useRoute();
-    const siteData = useSiteData();
-    const themeData = useThemeData();
+    const pageData = usePageData();
     const foront = usePageFrontmatter();
-    const supportIcons = {
-      WEIXIN: "icon-weixin",
-      TWITTER: "icon-HTSCIT-Twitter",
-      WEIBO: "icon-weibo",
-      EMAIL: "icon-email",
-      DOUBAN: "icon-douban",
-      GITHUB: "icon-github-outline",
-    };
+    const themeData = useThemeData();
+    watchEffect(() => {
+      console.log("测试路径" + route.path);
+    });
     return {
-      supportIcons,
+      foront,
       pageData,
-      siteData,
       themeData,
       route,
-      foront,
     };
   },
 });

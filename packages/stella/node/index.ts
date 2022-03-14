@@ -4,9 +4,9 @@ import type { ThemeConfig } from "../types";
 import { getAllPostMsg, getAllCategory, getAllTag } from "./utils/util";
 
 const routes = {
-  Layout: path.resolve(__dirname, "../client/layouts/Layout.vue"),
+  // Layout: path.resolve(__dirname, "../client/layouts/Layout.vue"),
   404: path.resolve(__dirname, "../client/layouts/404.vue"),
-  PostPage: path.resolve(__dirname, "../client/layouts/PostPage.vue"),
+  Layout: path.resolve(__dirname, "../client/layouts/Layout.vue"),
 };
 
 export default (themeConfig: ThemeConfig = {}, ctx) => {
@@ -39,7 +39,6 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
       const postInfo = getAllPostMsg(app.pages);
       const allCategory = getAllCategory(app.pages);
       const allTag = getAllTag(app.pages);
-
       // default pages
       // const homepage = await createPage(app, {
       //   path: "/",
@@ -50,7 +49,7 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
       const homepage = await createPage(app, {
         path: "/",
         frontmatter: {
-          layout: "PostPage",
+          layout: "Layout",
           postInfo,
           allCategory,
           allTag,
@@ -59,7 +58,7 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
       const postpage = await createPage(app, {
         path: "/post/",
         frontmatter: {
-          layout: "PostPage",
+          layout: "Layout",
           postInfo,
           allCategory,
           allTag,
@@ -79,25 +78,5 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
     extendsMarkdown(md) {
       md.use(require("markdown-it-task-lists"));
     },
-    extendsPageOptions: ({ filePath }, app) => {
-      if (
-        filePath &&
-        (filePath.includes("post") || filePath.includes("about"))
-      ) {
-        return {
-          frontmatter: {
-            layout: "PostPage",
-          },
-        };
-      }
-    },
-    clientAppSetupFiles: path.resolve(
-      __dirname,
-      "../client/clientAppSetupFiles.ts"
-    ),
-    clientAppEnhances: path.resolve(
-      __dirname,
-      "../client/clientAppEnhances.ts"
-    ),
   };
 };
