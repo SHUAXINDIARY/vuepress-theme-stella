@@ -55,6 +55,8 @@ interface ThemeConfig extends VupressSiteConfig {
 }
 ```
 
+## [more config click here](https://stella.shuaxinjs.cn/about/)
+
 
 <!-- # Feature -->
 
@@ -66,14 +68,13 @@ interface ThemeConfig extends VupressSiteConfig {
 - [ ] config default page ON-OFF
 - [x] comment system
 - [x] mobile adaptation
-- [ ] change theme color
 - [ ] pagination
-- [ ] doc、blog mode 
 - [ ] post banner img
 - [ ] site search
 - [ ] friend link
 - [ ] clipboard-plugin
 - [ ] comment-plugin
+- [ ] code snippets
 
 # License
 [![License: MIT](https://img.shields.io/badge/License-0BSD-yellow.svg)](https://opensource.org/licenses/0BSD)
