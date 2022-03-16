@@ -1,7 +1,7 @@
 {
   "name": "vuepress-theme-stella",
   "version": "1.0.8",
-  "main": "./index.ts",
+  "main": "./lib/index.ts",
   "homepage": "https://stella.shuaxinjs.cn/",
   "author": {
     "name": "SHUAXINDIARY",
@@ -20,6 +20,13 @@
     "vue": "^3.2.20",
     "vue-router": "^4.0.12"
   },
+  "keywords": [
+    "vue",
+    "vuepress",
+    "theme",
+    "stella",
+    "vuepress-theme-stella"
+  ],
   "license": "MIT",
   "dependencies": {
     "@vuepress/client": "2.0.0-beta.35",
