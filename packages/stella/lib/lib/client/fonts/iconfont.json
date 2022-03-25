@@ -1,0 +1,58 @@
+{
+  "id": "2867105",
+  "name": "vue-theme",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1251408",
+      "name": "calendar",
+      "font_class": "calendar1",
+      "unicode": "e6a3",
+      "unicode_decimal": 59043
+    },
+    {
+      "icon_id": "752658",
+      "name": "Weixin",
+      "font_class": "weixin",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "13359530",
+      "name": "HTSCIT-Twitter",
+      "font_class": "HTSCIT-Twitter",
+      "unicode": "e6e7",
+      "unicode_decimal": 59111
+    },
+    {
+      "icon_id": "9512712",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "10258917",
+      "name": "email",
+      "font_class": "email",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "785018",
+      "name": "豆瓣",
+      "font_class": "douban",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "9785951",
+      "name": "github-outline",
+      "font_class": "github-outline",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    }
+  ]
+}

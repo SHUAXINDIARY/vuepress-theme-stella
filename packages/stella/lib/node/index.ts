@@ -39,6 +39,11 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
         app.pages,
         mdType.POST
       );
+      const {
+        postInfo: _postInfo,
+        allCategory: _allCategory,
+        allTag: _allTag,
+      } = getAllMdMsg(app.pages, mdType.SNIPPET);
       const homePage = await createPage(app, {
         path: "/",
         frontmatter: {
@@ -61,9 +66,9 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
         path: "/snippet/",
         frontmatter: {
           layout: "Layout",
-          postInfo,
-          allCategory,
-          allTag,
+          postInfo: _postInfo,
+          allCategory: _allCategory,
+          allTag: _allTag,
         },
       });
       app.pages.push(...[homePage, postPage, snippetPage]);

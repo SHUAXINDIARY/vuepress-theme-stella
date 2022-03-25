@@ -38,6 +38,7 @@ export interface Post {
   name: string;
   categories: string[];
   tags: string[];
+  content?: string
 }
 
 export enum stateEmum {

@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "@vuepress/bundler-webpack": "^2.0.0-beta.36",
+    "cpx": "^1.5.0",
     "dayjs": "^1.10.7"
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "vuepress-theme-stella",
   "version": "1.0.9",
-  "main": "./lib/index.js",
+  "main": "./lib/index.ts",
   "homepage": "https://stella.shuaxinjs.cn/",
   "author": {
     "name": "SHUAXINDIARY",
@@ -10,7 +10,7 @@
   },
   "repository": "https://github.com/SHUAXINDIARY/vuepress-theme-stella",
   "scripts": {
-    "build": "yarn copy & tsc -",
+    "build": "yarn copy & tsc",
     "copy": "cpx \"./**/*.{d.ts,vue,scss,json,ttf,woff,woff2,css,js}\" lib"
   },
   "devDependencies": {

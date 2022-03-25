@@ -49,6 +49,7 @@ export const getAllMdMsg = (pages: Pages[], distName: string): PostMsg => {
         tags: (page.frontmatter.tag as string[]) || [],
         // 跳转链接
         link: "/" + page.filePathRelative,
+        content: page.contentRendered,
       };
       // 统计文章时间
       postList.push(post);

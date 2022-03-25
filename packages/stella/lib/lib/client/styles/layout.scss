@@ -1,0 +1,75 @@
+@import "./color.scss";
+@import "./theme.scss";
+
+.root {
+  margin: 0;
+  font-family: $font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+
+  @media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar {
+      background-color: rgba(142, 142, 147, 0.28);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(87, 87, 90, 0.6);
+      border-radius: 10px;
+    }
+  }
+}
+
+.layout {
+  width: 100vw;
+  @include background;
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .left {
+      position: relative;
+    }
+    // 移动端
+    @media screen and (max-width: $middle) {
+      .left {
+        width: 100vw;
+        height: 100vh;
+      }
+      .right {
+        display: none;
+      }
+    }
+
+    // pc端
+    @media screen and (min-width: $middle) {
+      .left {
+        height: 100vh;
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .right {
+        width: 65%;
+        margin-bottom: 100px;
+
+        .content {
+          margin-right: 50px;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  width: inherit;
+  text-align: center;
+  background-color: #faebd7;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  font-size: 14px;
+}
