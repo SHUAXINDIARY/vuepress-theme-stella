@@ -74,11 +74,13 @@ import { defineComponent, ref, watchEffect } from "vue";
 import { usePageData, useSiteData } from "@vuepress/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { useRoute } from "vue-router";
+import { _ as lodash } from "../../util";
+
 import Title from "./Title.vue";
 const MMOBILE_TITLE = {
   post: "文章",
   about: "关于",
-  snippets: "片段",
+  snippet: "片段",
 };
 export default defineComponent({
   components: {
@@ -108,6 +110,7 @@ export default defineComponent({
       pageName,
       supportIcons,
       themeData,
+      handleCopyEmail: lodash.handleCopyEmail,
     };
   },
 });

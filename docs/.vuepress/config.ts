@@ -60,7 +60,7 @@ module.exports = {
       },
       {
         label: "片段",
-        link: "/snippets/",
+        link: "/snippet/",
       },
       {
         label: "关于",

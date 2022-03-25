@@ -1,7 +1,7 @@
 import { path } from "@vuepress/utils";
 import { createPage } from "@vuepress/core";
 import type { ThemeConfig } from "../types";
-import { getAllPostMsg, getAllCategory, getAllTag } from "./utils/util";
+import { getAllMdMsg, mdType } from "./utils/util";
 
 const routes = {
   404: path.resolve(__dirname, "../client/layouts/404.vue"),
@@ -35,9 +35,10 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
     ],
     async onInitialized(app) {
       // 获取所有文章 分类 标签信息
-      const allTag = getAllTag(app.pages);
-      const postInfo = getAllPostMsg(app.pages);
-      const allCategory = getAllCategory(app.pages);
+      const { postInfo, allCategory, allTag } = getAllMdMsg(
+        app.pages,
+        mdType.POST
+      );
       const homePage = await createPage(app, {
         path: "/",
         frontmatter: {

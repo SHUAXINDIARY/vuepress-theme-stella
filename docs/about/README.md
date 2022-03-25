@@ -43,7 +43,7 @@ module.exports = {
       },
       {
         text: "片段",
-        link: "/snippets/",
+        link: "/snippet/",
       },
       {
         text: "关于",

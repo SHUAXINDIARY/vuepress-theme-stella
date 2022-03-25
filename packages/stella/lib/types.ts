@@ -9,7 +9,13 @@ interface ICommon {
 
 type Ifooter = ICommon;
 type Icates = ICommon;
-export type linkLabel = "WEIXIN" | "TWITTER" | "WEIBO" | "EMAIL" | "DOUBAN" | "GITHUB";
+export type linkLabel =
+  | "WEIXIN"
+  | "TWITTER"
+  | "WEIBO"
+  | "EMAIL"
+  | "DOUBAN"
+  | "GITHUB";
 
 interface Icons extends ICommon {
   label: linkLabel;
@@ -49,4 +55,10 @@ export interface CategoryMap {
 export interface TagMap {
   allTag: string[];
   data: PostMap;
+}
+
+export interface PostMsg {
+  postInfo: Post[];
+  allCategory: CategoryMap;
+  allTag: TagMap;
 }

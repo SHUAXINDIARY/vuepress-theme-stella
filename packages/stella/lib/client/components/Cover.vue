@@ -68,17 +68,13 @@ export default defineComponent({
       DOUBAN: "icon-douban",
       GITHUB: "icon-github-outline",
     };
-    const handleCopyEmail = async (email: string) => {
-      const res = await lodash.copyText(email);
-      res && alert("已复制到粘贴板");
-    };
     return {
       supportIcons,
       pageData,
       siteData,
       themeData,
       route,
-      handleCopyEmail,
+      handleCopyEmail: lodash.handleCopyEmail,
     };
   },
 });

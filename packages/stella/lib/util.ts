@@ -40,8 +40,14 @@ const copyText = async (text: string): Promise<boolean> => {
   return true;
 };
 
+const handleCopyEmail = async (email: string) => {
+  const res = await copyText(email);
+  res && alert("已复制到粘贴板");
+};
+
 export const _ = {
   isEmpty,
   uniqueArr,
   copyText,
+  handleCopyEmail
 };
