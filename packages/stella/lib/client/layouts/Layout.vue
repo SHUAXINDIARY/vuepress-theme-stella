@@ -34,8 +34,11 @@
           <MobilelHeader />
         </div>
         <div class="content">
-          <PostList v-if="route.path === '/post/'" />
-          <div v-else-if="!['/post/', '/'].includes(route.path)">
+          <PostList v-if="route.path === routeMap.post" />
+          <div v-else-if="route.path.includes(routeMap.snippet)">
+            片段
+          </div>
+          <div v-else-if="![routeMap.home, routeMap.post].includes(route.path)">
             <Title
               :title="foront?.title || pageData.title"
               :createdTime="Number(foront?.date)"
@@ -50,7 +53,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, watchEffect } from "vue";
+import { defineComponent } from "vue";
 import { useThemeData } from "@vuepress/plugin-theme-data/lib/client";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { useRoute } from "vue-router";
@@ -74,14 +77,16 @@ export default defineComponent({
     const pageData = usePageData();
     const foront = usePageFrontmatter();
     const themeData = useThemeData();
-    watchEffect(() => {
-      console.log("测试路径" + route.path);
-    });
     return {
       foront,
       pageData,
       themeData,
       route,
+      routeMap: {
+        home: "/",
+        post: "/post/",
+        snippet: "/snippet/",
+      },
     };
   },
 });

@@ -4,7 +4,6 @@ import type { ThemeConfig } from "../types";
 import { getAllPostMsg, getAllCategory, getAllTag } from "./utils/util";
 
 const routes = {
-  // Layout: path.resolve(__dirname, "../client/layouts/Layout.vue"),
   404: path.resolve(__dirname, "../client/layouts/404.vue"),
   Layout: path.resolve(__dirname, "../client/layouts/Layout.vue"),
 };
@@ -36,17 +35,10 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
     ],
     async onInitialized(app) {
       // 获取所有文章 分类 标签信息
+      const allTag = getAllTag(app.pages);
       const postInfo = getAllPostMsg(app.pages);
       const allCategory = getAllCategory(app.pages);
-      const allTag = getAllTag(app.pages);
-      // default pages
-      // const homepage = await createPage(app, {
-      //   path: "/",
-      //   frontmatter: {
-      //     layout: "Layout",
-      //   },
-      // });
-      const homepage = await createPage(app, {
+      const homePage = await createPage(app, {
         path: "/",
         frontmatter: {
           layout: "Layout",
@@ -55,7 +47,7 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
           allTag,
         },
       });
-      const postpage = await createPage(app, {
+      const postPage = await createPage(app, {
         path: "/post/",
         frontmatter: {
           layout: "Layout",
@@ -64,7 +56,16 @@ export default (themeConfig: ThemeConfig = {}, ctx) => {
           allTag,
         },
       });
-      app.pages.push(...[homepage, postpage]);
+      const snippetPage = await createPage(app, {
+        path: "/snippet/",
+        frontmatter: {
+          layout: "Layout",
+          postInfo,
+          allCategory,
+          allTag,
+        },
+      });
+      app.pages.push(...[homePage, postPage, snippetPage]);
     },
     // 监听文md文件变动重启 dev ；因为文章相关数据都是在node层生成并下发的
     onWatched(app, watchers, restart) {

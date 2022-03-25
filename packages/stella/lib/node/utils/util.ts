@@ -56,6 +56,7 @@ export const getAllCategory = (pages: Pages[]): CategoryMap => {
     },
   };
 };
+
 export const getAllTag = (pages: Pages[]): TagMap => {
   const result: PostMap = {};
   pages.forEach(page => {
@@ -91,3 +92,24 @@ export const getAllTag = (pages: Pages[]): TagMap => {
     },
   };
 };
+
+export const getAllSnippetMsg = (pages:Pages[]):Post[] => {
+  const result: Post[] = [];
+  pages.forEach(page => {
+    if (page.filePathRelative && page.filePathRelative.includes("snippet")) {
+      result.push({
+        // 文章名
+        name: page.frontmatter.title || page.title,
+        // 创建日期 以推到git仓库为准
+        date: page.data?.git?.createdTime || page.date,
+        // 文章分类
+        categories: (page.frontmatter.category as string[]) || [],
+        // 文章标签
+        tags: (page.frontmatter.tag as string[]) || [],
+        // 跳转链接
+        link: "/" + page.filePathRelative,
+      });
+    }
+  });
+  return result;
+}
