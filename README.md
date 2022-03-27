@@ -74,7 +74,7 @@ interface ThemeConfig extends VupressSiteConfig {
 - [ ] friend link
 - [ ] clipboard-plugin
 - [ ] comment-plugin
-- [ ] code snippets
+- [X] code snippets
 
 # License
 [![License: MIT](https://img.shields.io/badge/License-0BSD-yellow.svg)](https://opensource.org/licenses/0BSD)
